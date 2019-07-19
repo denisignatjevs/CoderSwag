@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         // так создается адаптер
         adapter = CategoryRecycleAdapter(this, DataServices.categories) {category ->
             val productIntent = Intent(this, ProductActivity::class.java)
-            productIntent.putExtra(EXTRA_CATEGORY, category.title) // this is how we add our extras that we're able to pass around from activity to activity
+            productIntent.putExtra(EXTRA_CATEGORY, category.title) // this is how we add our extras
+            // that we're able to pass around from activity to activity
             startActivity(productIntent) // так создается переход на другую активити
         }
         categoryListView.adapter = adapter // говорим Лист Вью, кого слушать
